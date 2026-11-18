@@ -1,0 +1,28 @@
+
+:root {
+    --forest: #245C45;
+    --cream: #FFF8ED;
+    --terra: #C96F45;
+    --charcoal: #292B27;
+    --sage: #DDE8D8;
+    --white: #FFFFFF;
+    --gray: #777A73;
+
+    --heading-font: "Poppins", sans-serif;
+    --body-font: "Inter", sans-serif;
+}
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+
+    background-image: url(
+        "https://i.pinimg.com/736x/bc/53/eb/bc53ebda57def13d53fc0d13b4e18b66.jpg"
+    ) alt="Localbite.";
+
+    background-size: cover;
+    background-position: center;
+}
