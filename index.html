@@ -2,50 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LocalBite — Find your local flavor</title>
-  <meta name="description" content="LocalBite is a directory of regional delicacies, home-based food makers, and local crafts from towns across the Philippines.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalBite | Find your local flavor</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="root">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">LocalBite<span>.</span></a>
-
-      <button class="nav-toggle" id="nav-toggle" type="button">
-        <span class="nav-toggle-bars"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-
-      <nav class="site-nav">
-        <ul id="primary-menu" class="nav-list">
-          <li><a href="#explore">Explore</a></li>
-          <li><a href="#featured">Featured</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a class="btn btn-primary btn-sm" href="#contact">List your business</a></li>
-        </ul>
+<body>
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="#top">LocalBite<span>.</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+      <nav id="nav-menu">
+        <a href="#explore">Explore</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="button small" href="#contact">List your business</a>
       </nav>
     </div>
   </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-overlay"></div>
-
+  <main>
+    <section class="hero">
       <div class="container hero-content">
-        <p class="hero-label">Discover. Experience. Support local.</p>
+        <p class="eyebrow light">Discover. Experience. Support local.</p>
         <h1>Find your <span>local flavor.</span></h1>
-        <p class="hero-lead">LocalBite connects you with authentic regional delicacies, home-based makers, and small food businesses across the Philippines. Explore local specialties by town and message vendors directly.</p>
-
-        <div class="hero-actions">
-          <a class="btn btn-terra" href="#explore" id="hero-explore">Explore local finds →</a>
-          <a class="btn btn-outline" href="#about">Our story</a>
+        <p>Discover authentic regional delicacies, home-based makers, and small businesses across the Philippines. Explore local specialties and connect with vendors directly.</p>
+        <div class="hero-buttons">
+          <a class="button" href="#explore">Explore local finds</a>
+          <a class="button outline" href="#about">Our story</a>
         </div>
       </div>
-
       <div class="hero-bottom">
         <span>Local products</span>
         <span>Authentic finds</span>
@@ -53,100 +40,79 @@
       </div>
     </section>
 
-    <section class="section intro">
-      <div class="container intro-content">
-        <p class="section-label">A taste of local life</p>
+    <section class="intro section">
+      <div class="container narrow">
+        <p class="eyebrow">A taste of local life</p>
         <h2>Every place has something<br><span>worth discovering.</span></h2>
-        <p>From hometown delicacies to handmade treasures, LocalBite brings local products and small businesses closer to the people looking for something authentic.</p>
+        <p>From hometown delicacies to handmade treasures, LocalBite brings local products and small businesses closer to people looking for something authentic.</p>
       </div>
     </section>
 
     <section class="section explore" id="explore">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Explore the directory</p>
+          <p class="eyebrow">Explore the directory</p>
           <h2>Find something local.</h2>
-          <p>Search a dish, a vendor, or a town — or browse by place and category.</p>
+          <p>Search a dish, a vendor, or a town, or browse by place and category.</p>
         </div>
 
-        <form class="search" id="search-form" autocomplete="off">
-          <svg class="search-icon" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/>
-          </svg>
-          <label class="sr-only" for="search-input">Search products, places, or vendors</label>
-          <input id="search-input" type="search" placeholder="Search products, vendors, or places…">
-          <button class="search-clear" id="search-clear" type="button" hidden>
-            <svg viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></svg>
-          </button>
-          <button class="btn btn-primary search-submit" type="submit">Search</button>
-          <ul class="suggestions" id="suggestions" hidden></ul>
-        </form>
-        <p class="hint">Try “tablea”, “Iloilo”, or “Vigan”.</p>
+        <div class="search-row">
+          <input id="search-input" type="search" placeholder="Search products, vendors, or places..." aria-label="Search local finds">
+          <button class="button" id="search-button">Search</button>
+        </div>
 
         <div class="filters">
-          <div class="place-field">
-            <label for="place-select">Place</label>
-            <div class="select-wrap">
-              <select id="place-select">
-                <option value="all">All places in the Philippines</option>
-              </select>
-              <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-            </div>
-          </div>
+          <label>Place
+            <select id="place-select">
+              <option value="all">All places in the Philippines</option>
+              <option value="Iloilo">Iloilo</option>
+              <option value="Bukidnon">Bukidnon</option>
+              <option value="Bohol">Bohol</option>
+              <option value="Vigan">Vigan</option>
+              <option value="Palawan">Palawan</option>
+            </select>
+          </label>
 
-          <div class="chips">
-            <button class="chip is-active" type="button" data-category="all">All finds</button>
-            <button class="chip" type="button" data-category="food">Food &amp; delicacies</button>
-            <button class="chip" type="button" data-category="souvenirs">Souvenirs</button>
-            <button class="chip" type="button" data-category="handicrafts">Handicrafts</button>
-            <button class="chip" type="button" data-category="products">Local products</button>
+          <div class="chips" id="category-buttons">
+            <button class="chip active" data-category="all">All finds</button>
+            <button class="chip" data-category="food">Food &amp; delicacies</button>
+            <button class="chip" data-category="souvenirs">Souvenirs</button>
+            <button class="chip" data-category="handicrafts">Handicrafts</button>
+            <button class="chip" data-category="products">Local products</button>
           </div>
         </div>
 
         <p class="result-count" id="result-count"></p>
-
-        <div class="product-grid" id="directory-grid"></div>
-
-        <div class="empty" id="empty-state" hidden>
-          <h3>No local finds match that yet.</h3>
-          <p>Try a different spelling, a nearby town, or clear the filters.</p>
-          <button class="btn btn-primary" type="button" id="reset-filters">Clear filters</button>
-        </div>
+        <div class="product-grid" id="product-grid"></div>
+        <p class="empty" id="empty-message" hidden>No local finds match your search. Try another keyword or clear the filters.</p>
       </div>
     </section>
 
     <section class="section featured" id="featured">
       <div class="container">
-        <div class="featured-heading">
-          <div>
-            <p class="section-label">Handpicked for you</p>
-            <h2>Featured local finds.</h2>
-          </div>
-          <a href="#explore" class="text-link">Explore all finds →</a>
+        <div class="section-heading left">
+          <p class="eyebrow">Handpicked for you</p>
+          <h2>Featured local finds.</h2>
         </div>
 
         <div class="featured-grid">
-          <button class="featured-card" type="button" data-featured-category="food">
-            <img src="images/pancit-molo.jpg" alt="A bowl of pancit molo from Iloilo" loading="lazy">
-            <span class="featured-shade"></span>
-            <span class="featured-content">
-              <span class="featured-tag">Featured find</span>
-              <span class="featured-title">Taste of tradition</span>
-              <span class="featured-text">Discover the flavors that make local food special.</span>
-              <span class="featured-cta">Browse food &amp; delicacies →</span>
-            </span>
-          </button>
+          <a class="feature-card feature-food" href="#explore" data-feature="food">
+            <div>
+              <span class="tag">Featured find</span>
+              <h3>Taste of tradition</h3>
+              <p>Discover the flavors that make local food special.</p>
+              <strong>Browse food &amp; delicacies →</strong>
+            </div>
+          </a>
 
-          <button class="featured-card" type="button" data-featured-category="handicrafts">
-            <img src="images/hablon.jpg" alt="Handwoven hablon textiles from Miagao" loading="lazy">
-            <span class="featured-shade"></span>
-            <span class="featured-content">
-              <span class="featured-tag">Featured find</span>
-              <span class="featured-title">Made by local hands</span>
-              <span class="featured-text">Find crafts and creations made by local artisans.</span>
-              <span class="featured-cta">Browse handicrafts →</span>
-            </span>
-          </button>
+          <a class="feature-card feature-craft" href="#explore" data-feature="handicrafts">
+            <div>
+              <span class="tag">Featured find</span>
+              <h3>Made by local hands</h3>
+              <p>Find crafts and creations made by local artisans.</p>
+              <strong>Browse handicrafts →</strong>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -154,25 +120,25 @@
     <section class="section why-local">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">Why LocalBite?</p>
+          <p class="eyebrow">Why LocalBite?</p>
           <h2>Discover local. Support local.</h2>
         </div>
 
         <div class="benefits-grid">
-          <article class="benefit-card">
-            <span class="benefit-number">01</span>
+          <article>
+            <span>01</span>
             <h3>Discover more</h3>
             <p>Find local delicacies, products, and businesses in one convenient directory instead of scattered posts.</p>
           </article>
-          <article class="benefit-card">
-            <span class="benefit-number">02</span>
+          <article>
+            <span>02</span>
             <h3>Support small businesses</h3>
-            <p>Help local entrepreneurs and artisans reach more potential customers, even without a social media account.</p>
+            <p>Help local entrepreneurs and artisans reach more customers, even without a social media account.</p>
           </article>
-          <article class="benefit-card">
-            <span class="benefit-number">03</span>
+          <article>
+            <span>03</span>
             <h3>Connect directly</h3>
-            <p>Message vendors to ask about products, prices, and availability — no ordering system in the way.</p>
+            <p>Message vendors to ask about products, prices, and availability. No ordering system in the way.</p>
           </article>
         </div>
       </div>
@@ -180,152 +146,96 @@
 
     <section class="section about" id="about">
       <div class="container about-grid">
-        <div class="about-image">
-          <img src="images/nito.jpg" alt="A Palawan weaver shaping a basket from nito vine" loading="lazy" width="1000" height="795">
-        </div>
-
-        <div class="about-content">
-          <p class="section-label">Our story</p>
+        <img src="images/dairy.jpg" alt="Traditional Hablon weaving">
+        <div>
+          <p class="eyebrow">Our story</p>
           <h2>Beyond the product is a story worth telling.</h2>
           <p>LocalBite is a local discovery platform created to connect people with the products, flavors, and small businesses that make every community unique.</p>
-          <p>We believe local entrepreneurs and artisans deserve opportunities to reach more people. Through an organized directory, discovering and supporting local businesses becomes easier — and every listing keeps the vendor, the place, and a direct contact link in one view.</p>
-          <a class="btn btn-primary" href="#contact">List your business →</a>
+          <p>We believe local entrepreneurs and artisans deserve opportunities to reach more people. Our directory keeps the vendor, the place, and contact details together in one view.</p>
+          <a class="button" href="#contact">List your business</a>
         </div>
       </div>
     </section>
 
     <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div class="contact-copy">
-          <p class="section-label">Get connected</p>
+        <div>
+          <p class="eyebrow light">Get connected</p>
           <h2>Have a local find to share?</h2>
           <p>Know a local business, artisan, or product worth discovering? Send the details and help more people find the treasures of your community.</p>
-          <ul class="check-list">
+          <ul>
             <li>Free basic listing with your location and contact link</li>
             <li>Featured placement for a small monthly fee</li>
             <li>No online ordering system to manage</li>
           </ul>
-          <p class="contact-note">Prefer email? Write to <a href="mailto:hello@localbite.example">hello@localbite.example</a>.</p>
+          <p class="contact-note">Prefer email? <a href="mailto:hello@localbite.example">hello@localbite.example</a></p>
         </div>
 
-        <form class="vendor-form" id="vendor-form" novalidate>
-          <div class="field">
-            <label for="vendor-name">Your name</label>
-            <input id="vendor-name" name="name" type="text" autocomplete="name">
-            <p class="field-error" id="err-name" hidden></p>
-          </div>
-          <div class="field">
-            <label for="vendor-business">Business name</label>
-            <input id="vendor-business" name="business" type="text" autocomplete="organization">
-            <p class="field-error" id="err-business" hidden></p>
-          </div>
-          <div class="field">
-            <label for="vendor-place">Place</label>
-            <select id="vendor-place" name="place">
+        <form class="vendor-form" id="vendor-form">
+          <label>Your name<input id="vendor-name" required></label>
+          <label>Business name<input id="vendor-business" required></label>
+          <label>Place
+            <select id="vendor-place" required>
               <option value="">Select a town or city</option>
+              <option>Iloilo</option>
+              <option>Bukidnon</option>
+              <option>Bohol</option>
+              <option>Vigan</option>
+              <option>Palawan</option>
             </select>
-            <p class="field-error" id="err-place" hidden></p>
-          </div>
-          <div class="field">
-            <label for="vendor-category">Category</label>
-            <select id="vendor-category" name="category">
+          </label>
+          <label>Category
+            <select id="vendor-category" required>
               <option value="">Select a category</option>
-              <option value="food">Food &amp; delicacies</option>
-              <option value="souvenirs">Souvenirs</option>
-              <option value="handicrafts">Handicrafts</option>
-              <option value="products">Local products</option>
+              <option>Food &amp; delicacies</option>
+              <option>Souvenirs</option>
+              <option>Handicrafts</option>
+              <option>Local products</option>
             </select>
-            <p class="field-error" id="err-category" hidden></p>
-          </div>
-          <div class="field">
-            <label for="vendor-contact">Mobile number</label>
-            <input id="vendor-contact" name="contact" type="tel" placeholder="0917 000 0000">
-            <p class="field-error" id="err-contact" hidden></p>
-          </div>
-          <div class="field field-wide">
-            <label for="vendor-story">What do you sell?</label>
-            <textarea id="vendor-story" name="story" rows="4"></textarea>
-            <p class="hint">At least 20 characters — the product, how it is made, and where customers can find you.</p>
-            <p class="field-error" id="err-story" hidden></p>
-          </div>
-          <div class="field-wide">
-            <button class="btn btn-primary" type="submit">Request a listing</button>
-          </div>
-          <div class="form-success field-wide" id="form-success" hidden>
-            <h3>Request received.</h3>
-            <p id="form-success-text"></p>
-            <button class="btn btn-ghost" type="button" id="form-again">Submit another business</button>
-          </div>
+          </label>
+          <label class="wide">Mobile number<input id="vendor-contact" type="tel" placeholder="0917 000 0000" required></label>
+          <label class="wide">What do you sell?<textarea id="vendor-story" rows="4" minlength="20" required></textarea></label>
+          <button class="button wide" type="submit">Request a listing</button>
+          <p class="form-message wide" id="form-message" hidden>Thank you! Your sample listing request has been received.</p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand brand-light" href="#top">LocalBite<span>.</span></a>
-          <p>Discover local. Support local.<br>Celebrate every find.</p>
-        </div>
-
-        <nav class="footer-links">
-          <h3>Quick links</h3>
-          <a href="#explore">Explore</a>
-          <a href="#featured">Featured</a>
-          <a href="#about">About</a>
-          <a href="#contact">List your business</a>
-        </nav>
-
-        <div class="footer-contact">
-          <h3>Get in touch</h3>
-          <p>Have questions or want to be featured?</p>
-          <a href="mailto:hello@localbite.example">hello@localbite.example</a>
-        </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo light-logo" href="#top">LocalBite<span>.</span></a>
+        <p>Discover local. Support local.<br>Celebrate every find.</p>
       </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 LocalBite · Student project by Mark Joseph Pelarca (BSIT-2Ax) · Photographs from Wikimedia Commons and Google photos</p>
+      <div>
+        <h3>Quick links</h3>
+        <a href="#explore">Explore</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">About</a>
+        <a href="#contact">List your business</a>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <p>Have questions or want to be featured?</p>
+        <a href="mailto:hello@localbite.example">hello@localbite.example</a>
       </div>
     </div>
   </footer>
 
   <div class="modal" id="product-modal" hidden>
     <div class="modal-backdrop" data-close></div>
-    <div class="modal-panel">
-      <button class="modal-close" type="button" data-close>
-        <svg viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></svg>
-      </button>
-      <div class="modal-media">
-        <img id="modal-image" alt="">
-      </div>
-      <div class="modal-body">
-        <p class="pill" id="modal-category"></p>
+    <div class="modal-box">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <img id="modal-image" src="" alt="">
+      <div class="modal-content">
+        <p class="eyebrow" id="modal-category"></p>
         <h2 id="modal-title"></h2>
         <p class="modal-price" id="modal-price"></p>
-        <p class="modal-availability" id="modal-availability"></p>
-        <p class="modal-desc" id="modal-desc"></p>
-        <dl class="modal-facts">
-          <div>
-            <dt>Vendor</dt>
-            <dd id="modal-vendor"></dd>
-          </div>
-          <div>
-            <dt>Where to find them</dt>
-            <dd id="modal-address"></dd>
-          </div>
-        </dl>
-        <div class="contact-actions">
-          <a class="btn btn-whatsapp" id="modal-whatsapp" href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.5 8.5c.6-.5 1.2-.3 1.5.3l.6 1.2c.2.4.1.7-.2 1l-.5.5c.5 1 1.4 1.9 2.4 2.4l.5-.5c.3-.3.6-.4 1-.2l1.2.6c.6.3.8.9.3 1.5-1.4 1.7-4.7.4-6.6-1.5s-3.2-5.2-1.5-6.6Z"/></svg>
-            WhatsApp
-          </a>
-          <a class="btn btn-messenger" id="modal-messenger" href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 3c5 0 9 3.7 9 8.3 0 4.6-4 8.3-9 8.3-1 0-2-.1-2.9-.4L5 21l.6-3.4C4 16.2 3 13.9 3 11.3 3 6.7 7 3 12 3Z"/><path d="m7 13.5 3.4-4 2 2 4.6-2-3.4 4-2-2-4.6 2Z"/></svg>
-            Messenger
-          </a>
-        </div>
-        <p class="fineprint">Demonstration listing — contact numbers and handles are samples, not live accounts.</p>
+        <p id="modal-description"></p>
+        <p><b>Vendor:</b> <span id="modal-vendor"></span></p>
+        <p><b>Location:</b> <span id="modal-place"></span></p>
+        <a class="button" id="modal-contact" href="#" target="_blank">Contact vendor</a>
       </div>
     </div>
   </div>
